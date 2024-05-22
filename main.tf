@@ -1,5 +1,5 @@
-provider "aws" {
-  region = "us-east-1"
+eprovider "aws" {
+  region = "Enter Region"
 }  
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -9,14 +9,15 @@ module "eks" {
 
   cluster_endpoint_public_access  = true
 
-  vpc_id                   = "vpc-036837437d5c1173f"
-  subnet_ids               = ["subnet-0acff22f083606bbf", "subnet-08775137440d679c5", "subnet-011e918ef4c8e2550"]
-  control_plane_subnet_ids = ["subnet-0acff22f083606bbf", "subnet-08775137440d679c5", "subnet-011e918ef4c8e2550"]
+  vpc_id                   = "Enter VPC ID"
+  subnet_ids               = ["Enter Subnet ID", "Another Subnet ID"]
+  control_plane_subnet_ids = ["Enter Same Subnet ID", "Same Other Subnet ID"]
 
-  cluster_security_group_id = "sg-042ff619eafabdf4f"
+  cluster_security_group_id = "SG ID with Right Permissions"
 
-  # EKS Managed Node Group(s)
+  # EKS Managed Node Group
   eks_managed_node_group_defaults = {
+    #no need to make it larger for this project
     instance_types = ["t2.micro"]
   }
 
