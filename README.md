@@ -50,6 +50,10 @@ terraform init
 terraform plan
 terraform apply
 ```
+### Add Cluster Config to Kubectl
+```
+aws eks update-kubeconfig --region region-code --name CLUSTER_NAME
+```
 ### Apply the K8s Deployment and Ensure it works
 ```
 kubectl apply -f app-deployment.yaml
@@ -64,4 +68,4 @@ kubectl get svc
 ```
 kubectl port-forward svc/app-deloyment 5000:5000
 ```
-### Navigate to "localhost:5000" on Your Browser to Ensure it works
+### Navigate to "localhost:5000" on Your Browser It Should Be Working
